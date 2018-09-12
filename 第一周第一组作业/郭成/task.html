@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="按钮1" />
+    <input type="button" value="按钮2" />
+    <input type="button" value="按钮3" />
+    <input type="button" value="按钮4" />
+    <input type="button" value="按钮5" />
+    <script>
+        // 一
+        // 基本数据类型: number string boolean null undefined
+        // 引用数据类型: object function 保存的是引用地址
+        //typeof, instanceof, constructor, tostring,
+        //isNaN()
+        //arguments,
+        //Number(),parseInt(), parseFloat()
+        // 二
+        // document.getElementById('div1')
+        // document.getElementsByClassName('w')[0]
+        // document.getElementsByName('h')[0]
+        // document.getElementsByTagName('div')[0]
+        // document.documentElement.clientHeight,document.documentElement.clientWidth
+        // ele.priviousElementSibling()
+        // var div = document.createElement('div')
+        // document.body.appendChild(div)
+        // var div1 = div.cloneNode()
+        // div.appendChild(div1)
+        // 三
+        // arr.pop(),arr.splice(arr.length - 1, 1)
+        // arr.push(), arr.splice(arr.length, 0, xx)
+        // arr.slice(), arr.splice(), arr.concat()
+        // arr.sort(function (a, b) {return a - b}), arr.slice(n-1, m)
+        // 四
+        // true, true, true, true, 51, false, true, ok, undefined, true 
+        // 五
+        // var ary = ['red', 'yellow', 'pink', 'green', 'blue']
+        // var inputs = document.getElementsByTagName('input')
+        // for(var i = 0; i < inputs.length; i++) {
+        //     inputs[i].onclick = function (i) {
+        //         return function (){
+        //             document.body.style.backgroundColor = ary[i]
+        //         }
+        //     }(i)
+        // }
+        //六
+        // var arr = [1,2,3,4] //[0,2,3,4]
+        // function fn(arr) {
+        //     // var arr
+        //     arr[0] = 0
+        //     arr = [0]
+        //     arr[0] = 100
+        //     return arr//[100]
+        // }
+        // var res = fn(arr)
+        // console.log(arr, res);
+        //二.选择题
+        //b, a, a, c, c, d, a, d, b, d
+        // 三,思考题
+        // 1,null, 空对象, 
+        // 2,undefined, 属性值为空
+        // 所谓“闭包”，指的是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。
+        // 通俗的讲：就是函数a的内部函数b，被函数a外部的一个变量引用的时候，就创建了一个闭包。
+
+        //四
+        //第1
+        // function fn(i) {
+        //     // var i = 11
+        //     return function (n) {
+        //         console.log(n+i++);
+        //     }
+        // }
+        // var f = fn(10)
+        // f(20)//30
+        // fn(20)(40)//60
+        // fn(30)(50)//80
+        // f(30)//41
+        //第2
+        // var i = 10//11,12,13,14
+        // function fn() {
+        //     return function (n) {
+        //         console.log(n + ++i)
+        //     }
+        // }
+        // var f = fn()
+        // f(20)//31
+        // fn()(20)//32
+        // fn()(30)//43
+        // f(30)//44
+        //第3
+        // var num = 10//60, 65,
+        // var obj = {num:20}//30
+        // obj.fn = (function (num) {
+        //     // var num = 21, 22, 23
+        //     this.num = num * 3
+        //     num++
+        //     return function (n) {
+        //         this.num += n
+        //         num++
+        //         console.log(num)//22 23
+        //     }
+        // }(obj.num))
+        // var fn = obj.fn
+        // fn(5)
+        // obj.fn(10)
+        // console.log(num, obj.num)//65,30
+        //第5
+        //不能实现,for循环结束i的值是length,以下是三种方法
+        
+        // for(var i = 0; i < oLis.length; i++){
+        //     oLis[i].onclick = function (i) {
+        //         tabChange(i)
+        //     }(i)
+        // }
+        // for(let i = 0; i < oLis.length; i++){
+        //     oLis[i].onclick = function () {
+        //         tabChange(i)
+        //     }
+        // }
+        // for(var i = 0; i < oLis.length; i++){
+        //     (function (i) {
+        //         oLis[i].onclick = function () {
+        //             tabChange(i)
+        //         }
+        //     }(i))
+        // }
+    </script>
+</body>
+</html>
